@@ -203,5 +203,8 @@
     "C_Cpp.clang_format_style": "Google",
     "C_Cpp.default.cppStandard": "gnu++17",
     "C_Cpp.default.cStandard": "c17",
-    "C_Cpp.default.defines": ["-D__aarch64__"],
+    "C_Cpp.default.defines": [
+        "-DBLAZE"
+    ],
+    "cmake.sourceDirectory": "${workspaceFolder}/cpp",
 }
