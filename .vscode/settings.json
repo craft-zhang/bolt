@@ -1,6 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
 
     "psi-header.config": {
         "forceToTop": true,
@@ -205,6 +205,17 @@
     "C_Cpp.default.cStandard": "c17",
     "C_Cpp.default.defines": [
         "-DBLAZE"
+    ],
+    "C_Cpp.default.includePath": ["cpp/src/",
+        "cpp/src/external",
+        "cpp/src/external/eigen/",
+        "cpp/src/external/eigen/Eigen",
+        "cpp/src/include",
+        "cpp/src/quantize",
+        "cpp/src/utils",
+        "cpp/test/external",
+        "cpp/test/quantize",
+        "cpp/test/testing_utils",
     ],
     "cmake.sourceDirectory": "${workspaceFolder}/cpp",
 }
