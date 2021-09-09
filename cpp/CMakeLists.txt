@@ -25,6 +25,11 @@ if(CMAKE_SYSTEM_PROCESSOR MATCHES "(x86_64)|(X86_64)|(x64)|(X64)|(amd64)|(AMD64)
   target_include_directories(main PRIVATE test/external test/quantize test/testing_utils)
   target_link_libraries(main PUBLIC bolt mithral)
 
+  file(GLOB profile_src test/quantize/profile*.cpp)
+  add_executable(profile_main test/main.cpp src/utils/avx_utils.cpp ${profile_src})
+  target_include_directories(profile_main PRIVATE test/external test/quantize test/testing_utils)
+  target_link_libraries(profile_main PUBLIC bolt mithral)
+
   add_library(bolt STATIC src/quantize/bolt.cpp)
   target_include_directories(bolt PUBLIC src/ src/external src/external/eigen/ src/external/eigen/Eigen src/include src/quantize src/utils)
   set_target_properties(bolt PROPERTIES LINK_FLAGS "-static-libstdc++ -static-libgcc")
